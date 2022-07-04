@@ -13,9 +13,6 @@ def Number_of_tasks_per_month():
         dates.append(i[0])
         amount_of_room_service_requests.append(i[1])
 
-    print("amont of room service requests = ", sum(amount_of_room_service_requests))
-    print("Dates = ", dates)
-
     plt.bar(dates, amount_of_room_service_requests)
     plt.ylim(0, max(amount_of_room_service_requests) + 1)
     plt.xlabel("Dates")
