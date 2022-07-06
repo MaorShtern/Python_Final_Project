@@ -1,10 +1,12 @@
 from Customers_Rooms import Month_with_the_most_reservation
 from Tasks import Number_of_tasks_per_month
+from Products import product_sales
 
 
 def main():
-    Number_of_tasks_per_month()
-    Month_with_the_most_reservation()
+    # Number_of_tasks_per_month()
+    # Month_with_the_most_reservation()
+    product_sales()
 
 
 if __name__ == '__main__':
