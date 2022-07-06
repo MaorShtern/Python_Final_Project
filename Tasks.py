@@ -9,7 +9,7 @@ def Number_of_tasks_per_month():
     amount_of_room_service_requests = []
     dates = []
 
-    for i in cursor.execute("SELECT Start_Date, count(Start_Date) FROM Employees_Tasks GROUP by Start_Date"):
+    for i in cursor.execute("exec Number_of_tasks_per_month"):
         dates.append(i[0])
         amount_of_room_service_requests.append(i[1])
 
