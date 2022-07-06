@@ -6,7 +6,7 @@ cursor = Connect_to_SQL_Server()
 
 def Month_with_the_most_reservation():
     result = []
-    for row in cursor.execute("select MONTH(Entry_Date) as Month  from [dbo].[Customers_Rooms] GROUP by Entry_Date"):
+    for row in cursor.execute("exec Month_with_the_most_reservation"):
         result.append(row[0])
 
     result = list(set(list(map(lambda x: (x, result.count(x)), result))))
@@ -27,4 +27,4 @@ def Month_with_the_most_reservation():
 
 
 if __name__ == '__main__':
-    Month_with_the_most_reservation();
+    Month_with_the_most_reservation()
