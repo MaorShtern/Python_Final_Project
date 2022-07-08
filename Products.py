@@ -1,5 +1,6 @@
 import pandas as pd
 import pymssql
+from SQL_Connection import Connect_to_SQL_Server
 
 
 def sort_by_category(e):
@@ -52,7 +53,6 @@ def most_products_sales_in_each_category():
                 if temp_dict['Amount'] > dictionary_of_best_sellers[category][0]:
                     dictionary_of_best_sellers[category][0] = temp_dict['Amount']
                     dictionary_of_best_sellers[category].append(temp_dict['Description'])
-
     display_table_of_best_sellers(dictionary_of_best_sellers, category_list)
 
 
@@ -93,5 +93,11 @@ def product_sales():
     return result_rows
 
 
-if __name__ == '__main__':
-    most_products_sales_in_each_category()
+def Product_Purchase_By_Code(product_code):
+    product_list = []
+
+    cursor = Connect_to_SQL_Server()
+    for row in cursor.execute("exec ProductPurchaseByCode " + product_code):
+        product_list.append(row)
+
+    print(product_list)

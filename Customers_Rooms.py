@@ -1,7 +1,4 @@
 import math
-
-import matplotlib
-
 from SQL_Connection import Connect_to_SQL_Server
 from matplotlib import pyplot as plt
 from collections import Counter, OrderedDict
@@ -18,6 +15,7 @@ def Month_with_the_most_reservation():
                               "dbo.Rooms.Room_Number GROUP BY dbo.Customers_Rooms.Bill_Number, "
                               "dbo.Customers_Rooms.Entry_Date, dbo.Rooms.Room_Type"):
         dates.append(row[1])
+    print(dates)
     months = [date.month for date in dates]
     res = list(OrderedDict.fromkeys(months))
     amount = list(Counter(months).values())
