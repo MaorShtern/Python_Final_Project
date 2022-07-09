@@ -1,4 +1,10 @@
 import math
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
 from SQL_Connection import Connect_to_SQL_Server
 from matplotlib import pyplot as plt
 from collections import Counter, OrderedDict
@@ -20,9 +26,9 @@ def Month_with_the_most_reservation():
     res = list(OrderedDict.fromkeys(months))
     amount = list(Counter(months).values())
     plt.bar(res, amount)
-    plt.ylim(0, max(amount)+1)
+    plt.ylim(0, max(amount) + 1)
 
-    plt.yticks(range(0, math.ceil(max(amount))+1))
+    plt.yticks(range(0, math.ceil(max(amount)) + 1))
     plt.xlabel("MONTH")
     plt.ylabel("Amount")
     plt.title("Month with the most reservation")
