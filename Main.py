@@ -6,11 +6,11 @@ from Financial import Rooms_Income, Purchase_Of_Goods_Expenses, Products_Income
 
 def main():
     # Number_of_tasks_per_month()
-    Month_with_the_most_reservation()
+    #Month_with_the_most_reservation()
     # Products.get_product_sales()
     # Products.most_products_sales_in_each_category()
-    # product_code = input("Product_Purchase_By_Code: ")
-    # Products.Product_Purchase_By_Code(product_code=product_code)
+    product_name = input("Product_Purchase_By_Code: ")
+    Products.Product_Purchase_By_Code(product_code=product_name)
     # goods_Expenses = Purchase_Of_Goods_Expenses()
     # print(f"Purchase_Of_Goods_Expenses: {goods_Expenses}")
     # rooms_Income_total = Rooms_Income()
