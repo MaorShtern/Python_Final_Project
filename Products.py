@@ -1,6 +1,6 @@
 import pandas as pd
 import pymssql
-from SQL_Connection import Connect_to_SQL_Server
+from SQL_Connection import Connect_to_SQL_Server,Connect_to_SQL_Server_Pymssql
 
 
 def sort_by_category(e):
@@ -58,7 +58,6 @@ def most_products_sales_in_each_category():
 
 def print_df(data):
     '''
-
     :param data: מידע במבנה של מילון
     הפונקציה יוצרת מסגרת תצוגה מהפרמטר שהתקבל ומדפיסה אותה
     '''
@@ -79,9 +78,7 @@ def product_sales():
     הפונצקיה יוצרת חיבור עם מסד הנתונים ויוצרת רשימה של מילונים מערך המוחזר מפרוצדורה להצגת כל המכירות
     :return:result_rows :   רשימה של מילונים
     """
-    conn = pymssql.connect(server='sql5108.site4now.net',
-                           user='db_a79b5b_proj13_admin', password='XXNEA6q6VbvATG6g', database='db_a79b5b_proj13')
-    cursor = conn.cursor(as_dict=True)
+    cursor = Connect_to_SQL_Server_Pymssql()
 
     cursor.callproc('SumPerProduct')
     result_rows = [row for row in cursor]
@@ -101,3 +98,4 @@ def Product_Purchase_By_Code(product_code):
         product_list.append(row)
 
     print(product_list)
+
