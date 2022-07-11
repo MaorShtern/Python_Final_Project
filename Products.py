@@ -94,7 +94,7 @@ def Product_Purchase_By_Code(product_code):
     product_list = []
 
     cursor = Connect_to_SQL_Server()
-    for row in cursor.execute("exec ProductPurchaseByCode " + product_code):
+    for row in cursor.execute(f"exec ProductPurchaseByName '{product_code}'"):
         product_list.append(row)
 
     print(product_list)

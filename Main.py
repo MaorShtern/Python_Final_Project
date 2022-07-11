@@ -11,13 +11,13 @@ def main():
     # Products.most_products_sales_in_each_category()
     product_name = input("Product_Purchase_By_Code: ")
     Products.Product_Purchase_By_Code(product_code=product_name)
-    # goods_Expenses = Purchase_Of_Goods_Expenses()
-    # print(f"Purchase_Of_Goods_Expenses: {goods_Expenses}")
-    # rooms_Income_total = Rooms_Income()
-    # print(f"Rooms_Income: {rooms_Income_total}")
-    # products_Income = Products_Income()
-    # print(f"Products_Income: {products_Income}")
-    # print(f"General income: {rooms_Income_total + products_Income - goods_Expenses}")
+    goods_Expenses = Purchase_Of_Goods_Expenses()
+    print(f"Purchase_Of_Goods_Expenses: {goods_Expenses}")
+    rooms_Income_total = Rooms_Income()
+    print(f"Rooms_Income: {rooms_Income_total}")
+    products_Income = Products_Income()
+    print(f"Products_Income: {products_Income}")
+    print(f"General income: {rooms_Income_total + products_Income - goods_Expenses}")
 
 
 if __name__ == '__main__':
